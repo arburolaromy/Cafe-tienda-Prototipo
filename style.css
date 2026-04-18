@@ -1,0 +1,129 @@
+:root {
+    --primary: #4A3018; /* Café Oscuro */
+    --secondary: #8C5A35;
+    --light: #F7F5F0;
+    --whatsapp: #25D366;
+    --dark-red: #8B0000;
+    --bright-red: #FF0000;
+}
+
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Helvetica', Arial, sans-serif; }
+body { line-height: 1.6; color: #333; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+.section { padding: 80px 0; }
+.bg-light { background-color: var(--light); }
+.text-center { text-align: center; margin-bottom: 40px; }
+
+
+/* NUEVO: Fondo café clarito SOLO para "Nuestro Café" */
+.cafe-bg {
+    background: linear-gradient(180deg, #EAD7C3, #F7EFE5);
+}
+
+
+/* Títulos */
+.titulo-historia { color: var(--bright-red) !important; }
+.titulo-nuestro-cafe { color: var(--primary) !important; }
+.titulo-tour { color: var(--dark-red) !important; }
+
+
+/* Tamaños de letra */
+.texto-historia p { font-size: 19px; margin-bottom: 15px; }
+.texto-cafe { font-size: 20px !important; }
+.texto-tour { font-size: 20px !important; }
+
+
+/* Header */
+header {
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5%;
+    position: fixed;
+    top: 0; width: 100%; z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+.logo img { height: 60px; }
+.nav-links { display: flex; list-style: none; gap: 25px; }
+.nav-links a { text-decoration: none; color: var(--primary); font-weight: bold; font-size: 14px; text-transform: uppercase; }
+.menu-toggle { display: none; font-size: 24px; cursor: pointer; }
+
+
+/* Hero */
+.hero {
+    height: 70vh;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('Cafetal.jpg') center/cover;
+    display: flex; justify-content: center; align-items: center; margin-top: 80px;
+}
+.hero h1 { color: white; font-size: 3.5rem; text-align: center; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); }
+
+
+/* Historia */
+.historia-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+.img-responsive { width: 100%; border-radius: 10px; }
+
+
+/* Productos */
+.productos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+.producto-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+}
+.producto-card img {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.precio { color: var(--secondary); font-weight: bold; margin-top: 10px; font-size: 1.2rem; }
+
+
+/* Tour */
+.collage-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 15px;
+}
+.collage-grid img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+
+/* Mapa y WhatsApp */
+.map-container { margin: 30px 0; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+.button-wrapper { display: flex; justify-content: center; width: 100%; margin-top: 30px; }
+.btn-whatsapp {
+    background: var(--whatsapp); color: white; padding: 18px 35px; border-radius: 50px;
+    text-decoration: none; font-weight: bold; font-size: 1.2rem; display: flex; align-items: center; gap: 10px;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+}
+
+
+/* Footer */
+footer { background: var(--primary); color: white; padding: 40px 0; text-align: center; }
+.social-links a { color: white; font-size: 1.8rem; margin: 0 15px; }
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; position: absolute; top: 80px; left: 0; width: 100%;
+        background: white; flex-direction: column; padding: 30px; text-align: center;
+    }
+    .nav-links.active { display: flex; }
+    .menu-toggle { display: block; }
+    .hero h1 { font-size: 2.2rem; }
+    .historia-grid { grid-template-columns: 1fr; }
+}
